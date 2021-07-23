@@ -65,3 +65,9 @@
   opacity: 0;
   transition: 0.6s;
 }
+
+
+#desc {
+  margin: 40px;
+  padding: 40px;
+}

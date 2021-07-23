@@ -37,15 +37,17 @@ export default class App extends Component {
         // removeDefaultStyle
       >
         <Page pageTitle="test1">
-          <label>Color:</label><br/>
-          <button type="button" onClick={() => this.setState({ color: "red" })}>Red</button>
-          <button type="button" onClick={() => this.setState({ color: "blue" })}>Blue</button>
-          <br />
-          <button type="button" onClick={() => this.setState({ color: "green" })}>Green</button>
-          <button type="button" onClick={() => this.setState({ color: "orange" })}>Orange</button>
-          <br />
-          <button type="button" onClick={() => this.setState({ color: "pink" })}>Pink</button>
-          <button type="button" onClick={() => this.setState({ color: "yellow" })}>Yellow</button>
+          <div className="page-wrapper">
+            <label>Color:</label><br/>
+            <button type="button" onClick={() => this.setState({ color: "red" })}>Red</button>
+            <button type="button" onClick={() => this.setState({ color: "blue" })}>Blue</button>
+            <br />
+            <button type="button" onClick={() => this.setState({ color: "green" })}>Green</button>
+            <button type="button" onClick={() => this.setState({ color: "orange" })}>Orange</button>
+            <br />
+            <button type="button" onClick={() => this.setState({ color: "pink" })}>Pink</button>
+            <button type="button" onClick={() => this.setState({ color: "yellow" })}>Yellow</button>
+          </div>
         </Page>
         <Page pageTitle="test2">
           {Wrapped}
