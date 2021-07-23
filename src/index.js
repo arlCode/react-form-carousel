@@ -72,7 +72,9 @@ export default class Form extends Component {
       setTimeout(this.formRef.current.scrollTo({
         behavior: 'smooth',
         left: page * (this.formRef.current.offsetWidth),
-      })}, 10);
+      }
+      
+      console.log("called SCroll TO"))}, 1000);
 
       // update height
       setTimeout(() => {
