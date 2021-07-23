@@ -69,12 +69,14 @@ export default class Form extends Component {
       // update currentPage & scroll
       this.currentPage = page;
 
+      console.log("called SCroll TO")
+
       setTimeout(this.formRef.current.scrollTo({
         behavior: 'smooth',
         left: page * (this.formRef.current.offsetWidth),
       }
       
-      console.log("called SCroll TO"))}, 1000);
+      )}, 1000);
 
       // update height
       setTimeout(() => {
