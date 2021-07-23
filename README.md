@@ -141,6 +141,3 @@ This is the default styling (in comments). Edit this stylesheet or use the attri
 ## License
 
 MIT © [npkevin](https://github.com/npkevin)
-
-
-<!-- TODO: Update README, with new properties added to Page component and handlePrev/handleNext -->
