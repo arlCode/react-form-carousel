@@ -68,15 +68,14 @@ export default class Form extends Component {
     if (page <= this.lastPage && page >= 0) {
       // update currentPage & scroll
       this.currentPage = page;
+      console.log("called SCroll TO");
 
-      console.log("called SCroll TO")
-
-      setTimeout(this.formRef.current.scrollTo({
-        behavior: 'smooth',
-        left: page * (this.formRef.current.offsetWidth),
-      }
-      
-      )}, 1000);
+      setTimeout(() => {
+        this.formRef.current.scrollTo({
+          behavior: 'smooth',
+          left: page * (this.formRef.current.offsetWidth)
+        })
+      }, 10);
 
       // update height
       setTimeout(() => {
@@ -113,6 +112,7 @@ export default class Form extends Component {
 
   // Expanded this to control event handling outside of component
   nextPage = (event, pageTitle) => {
+
     this.scrollToPage(this.currentPage + 1);
 
     this.updatePageTitle(this.pageTitles[this.currentPage]);
