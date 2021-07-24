@@ -43,7 +43,7 @@ export default class Form extends Component {
     clearTimeout(this.resizeTimer);
     this.resizeTimer = setTimeout(() => {
       this.scrollToPage(this.currentPage);
-    }, 50); // timeout is 50 ms
+    }, 200); // timeout is 50 ms
   }
 
   // Determines what page is currently being shown
@@ -63,19 +63,22 @@ export default class Form extends Component {
     this.heights[page.toString()] = height;
   }
 
+
+  // TODO: this method needs work, it's too dependent on everything being ideal and static.
   scrollToPage = (page) => {
     // Can't "scroll" past lastpage or before first page
     if (page <= this.lastPage && page >= 0) {
       // update currentPage & scroll
       this.currentPage = page;
-      console.log("called SCroll TO");
 
       setTimeout(() => {
         this.formRef.current.scrollTo({
           behavior: 'smooth',
           left: page * (this.formRef.current.offsetWidth)
         })
-      }, 10);
+
+        console.log(this.formRef.current.offsetWidth);
+      }, 500);
 
       // update height
       setTimeout(() => {
