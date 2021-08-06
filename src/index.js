@@ -77,7 +77,6 @@ export default class Form extends Component {
           left: page * (this.formRef.current.offsetWidth)
         })
 
-        console.log(this.formRef.current.offsetWidth);
       }, 500);
 
       // update height
