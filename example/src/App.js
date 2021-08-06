@@ -15,15 +15,11 @@ export default class App extends Component {
   }
 
   handleClick = (event) => {
-    console.log("test");
-    console.log(event.target.id);
-    console.log(event.target.value);
   }
 
   // Handle form submit
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
   }
 
   render() {
