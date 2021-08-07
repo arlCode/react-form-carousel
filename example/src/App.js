@@ -30,7 +30,7 @@ export default class App extends Component {
         autoHeight
         handlePrev={this.handleClick}
         handleNext={this.handleClick}
-        // removeDefaultStyle
+        gaId="UA-190208164-1"
       >
         <Page pageTitle="test1">
           <div className="page-wrapper">
