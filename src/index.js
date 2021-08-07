@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import smoothscroll from 'smoothscroll-polyfill';
 import classNames from 'classnames';
+import ReactGA from 'react-ga';
 
 import style from './style.module.css';
 import defaultStyle from './default-style.module.css';
@@ -18,7 +19,7 @@ export default class Form extends Component {
     this.heights = {};
     this.state = {
       height: 0,
-      pageTitle: '',
+      pageTitle: ''
     };
   }
 
@@ -27,6 +28,8 @@ export default class Form extends Component {
   }
 
   componentDidMount = () => {
+    ReactGA.initialize(this.props.gaId);
+
     this.lastPage = this.getPageLength() - 1; //-1 for indexing
     this.currentPage = this.getCurrentPage("down");
     this.setState({ 
@@ -97,7 +100,8 @@ export default class Form extends Component {
   }
   
   updatePageTitle(pageTitle) {
-
+    ReactGA.pageview(window.location.pathname + window.location.search, document.title);
+    
     this.setState({
       pageTitle: pageTitle
     });
@@ -193,6 +197,8 @@ export default class Form extends Component {
       style.navcontainer,
       this.props.removeDefaultStyle ? null : defaultStyle.navcontainer,
     );
+
+    ReactGA.pageview(window.location.pathname + window.location.search, document.title);
 
     return (
       <div className={navStyle}>
